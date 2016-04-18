@@ -37,6 +37,6 @@ p = df.Pipeline('DirectPipelineRunner')
 (p
  | df.Read('load messages', df.io.TextFileSource('./player_birth_dates.csv'))
  | df.Map('get zodiac sign', get_zodiac_sign)
- | df.combiners.Count.PerElement('count words')
+ | df.combiners.Count.PerElement('count signscount words -> count ')
  | df.Write('save', df.io.TextFileSink('./results')))
 p.run()
